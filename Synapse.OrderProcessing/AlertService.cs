@@ -15,8 +15,9 @@ namespace Synapse.OrderProcessing
 
         public async Task SendAlert(JObject order)
         {
-            _logger.LogInformation($"Sending alert for order {order["id"]}");
-            await Task.CompletedTask;
+            _logger.LogInformation("Sending alert for order: {OrderId}", order?["id"]);
+            await Task.Delay(50);
+            _logger.LogInformation("Alert sent for order: {OrderId}", order?["id"]);
         }
     }
 }
